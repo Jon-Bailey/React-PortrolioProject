@@ -1,6 +1,7 @@
 import React, { Component }  from 'react';
-import { Nav, NavLink, Navbar, NavbarBrand, NavbarToggler, Collapse, NavItem, Button, Container,Modal, ModalHeader, ModalBody,
+import { Nav, Navbar, NavbarBrand, Collapse, NavItem, Button, Container,Modal, ModalHeader, ModalBody,
     Form, FormGroup, Input, Label } from 'reactstrap';
+import { NavLink } from 'react-router-dom';
 
 
 class Header extends Component {
@@ -29,21 +30,21 @@ class Header extends Component {
     
     render() {
     return (
-        <Container className="themed-container mx-0" fluid={true}>
-            <Navbar sticky="top" expand="md" className="shadow-sm">
+        <Container>
+            <Navbar  sticky="top" expand="md">
                     <div className="container">
-                        <NavbarBrand className="mr-auto" href="/"><img src="../images/logo2.png" height="30" width="50" alt="Logo" /></NavbarBrand>
-                        <NavbarToggler onClick={this.toggleNav} />
-                        <Collapse isOpen={this.state.isNavOpen} navbar>
-                            <Nav navbar className="justify-content-end">
+                        <NavbarBrand className="mr-auto" href="/"><img src="../images/logo2.png" height="40" width="70" alt="Logo" /></NavbarBrand>
+                        <Button className="navbar-toggler" onClick={this.toggleNav} />
+                        <Collapse  isOpen={this.state.isNavOpen} navbar>
+                            <Nav  navbar>
                                 <NavItem>
-                                    <NavLink className="nav-link" to="/home">
+                                    <NavLink className="nav-link" to='/home'>
                                         <i className="fa fa-home fa-lg" /> Home
                                     </NavLink>
                                 </NavItem>
                                 <NavItem>
-                                    <NavLink className="nav-link" to="/recipes">
-                                        <i className="fa fa-home fa-lg" /> Recipes
+                                    <NavLink className="nav-link" to ='/recipes'>
+                                        <i className="fa fa-list fa-lg" /> Recipes
                                     </NavLink>
                                 </NavItem>
                             </Nav>
@@ -53,6 +54,9 @@ class Header extends Component {
                                 </Button>
                             </span>
                         </Collapse>
+                        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span className="navbar-toggler-icon"></span>
+                         </button>
                     </div>
                 </Navbar>
                 <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}>

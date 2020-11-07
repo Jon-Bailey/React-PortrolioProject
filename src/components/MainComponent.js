@@ -4,7 +4,7 @@ import Footer from './FooterComponent';
 import Hero from './HeroComponent';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import  Recipes from './RecipesComponent';
-import {RECIPES } from '../shared/recipes';
+import { RECIPES } from '../shared/recipes';
 
 
 class Main extends Component {
@@ -16,12 +16,25 @@ class Main extends Component {
         };
     }
     render() {
+
+        const HeroSection = () => {
+            return (
+                <Hero />
+            );
+        };
+
+        const RecipesSection = () => {
+            return (
+                <Recipes />
+            );
+        };
+
         return(
             <div>
                 <Header/>
                 <Switch>
-                <Route path='/home' component={Hero} />
-                <Route exact path='/recipes' render={() => <Recipes recipes={this.props.recipes} />} />
+                <Route path='/home' component={HeroSection} />
+                <Route path='/recipes' component={RecipesSection} />
                 <Redirect to='/home' />
                 </Switch>
                 <Footer />
