@@ -16,19 +16,16 @@ class Main extends Component {
         };
     }
     render() {
-
         const HeroSection = () => {
             return (
                 <Hero />
             );
         };
-
         const RecipesSection = () => {
             return (
                 <Recipes />
             );
         };
-
         return(
             <div>
                 <Header/>

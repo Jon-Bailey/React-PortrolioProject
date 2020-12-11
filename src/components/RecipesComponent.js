@@ -1,64 +1,40 @@
-import React, { Component } from 'react';
-import { Card, CardBody, CardTitle } from 'reactstrap';
+import React, { useEffect, useState, } from 'react';
+import Recipe from './Recipe'
 
 
-class Recipes extends Component {
-  
-  render() {
+const Recipes = () => {
+//declaring variables to use
+      const APP_ID = "16f6918b";
+      const APP_KEY = "b7286fa533fefe8e019698d1c066c7dd";
+
+      const [recipes, setRecipes] = useState([]);
+
+//on page load, do this function
+      useEffect(() => { 
+        getRecipes();
+    }, []);
+
+//fetch recipes and load whenever you get them
+    const getRecipes = async () => {
+      const response = await fetch(`https://api.edamam.com/search?q=chicken&app_id=${APP_ID}&app_key=${APP_KEY}`);
+      const data = await response.json();
+      setRecipes(data.hits);
+    }
+
   return (
-    <div className="container-fluid py-5" id="cardsSection">
+    <div className="container pb-5">
       <div className="row">
-        <div className="col text-center">
-          <h1 className="text-align-center">Breakfast</h1>
-        </div>
-      </div>
-      <div className="row row-content">
-        <Card card className=" mx-auto mt-5">
-          <CardTitle className="text-white position-absolute pl-3 pt-3">{}</CardTitle>
-          <img
-            className="card-img-top"
-            src="../images/meal1.png"
-            alt="Card cap 1 "
+        {recipes.map(recipe => (
+          <Recipe 
+          title={recipe.recipe.label}
+          image={recipe.recipe.image}
+          labels={recipe.recipe.healthLabels}
+          calories={(Math.floor(recipe.recipe.calories))}
           />
-          <CardBody className="card-body">
-            <p className="card-text">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est,
-              earum.
-            </p>
-          </CardBody>
-        </Card>
-        <Card card className=" mx-auto mt-5">
-          <CardTitle className="text-white position-absolute pl-3 pt-3">{}</CardTitle>
-          <img
-            className="card-img-top"
-            src="../images/meal1.png"
-            alt="Card cap 1 "
-          />
-          <CardBody className="card-body">
-            <p className="card-text">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est,
-              earum.
-            </p>
-          </CardBody>
-        </Card>
-        <Card card className=" mx-auto mt-5">
-          <CardTitle className="text-white position-absolute pl-3 pt-3">{}</CardTitle>
-          <img
-            className="card-img-top"
-            src="../images/meal1.png"
-            alt="Card cap 1 "
-          />
-          <CardBody className="card-body">
-            <p className="card-text">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est,
-              earum.
-            </p>
-          </CardBody>
-        </Card>
+        ))}
       </div>
     </div>
     );
-}
-}
+  }
 
 export default Recipes;

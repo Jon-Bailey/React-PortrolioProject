@@ -7,7 +7,6 @@ import { NavLink } from 'react-router-dom';
 class Header extends Component {
     constructor(props){
         super(props);
-    
         this.state = {
             isNavOpen: false,
             isModalOpen: false
@@ -39,18 +38,18 @@ class Header extends Component {
                             <Nav  navbar>
                                 <NavItem>
                                     <NavLink className="nav-link" to='/home'>
-                                        <i className="fa fa-home fa-lg" /> Home
+                                     Home
                                     </NavLink>
                                 </NavItem>
                                 <NavItem>
                                     <NavLink className="nav-link" to ='/recipes'>
-                                        <i className="fa fa-list fa-lg" /> Recipes
+                                     Recipes
                                     </NavLink>
                                 </NavItem>
                             </Nav>
                             <span className="navbar-text ml-auto">
                                 <Button outline className="btn-warning text-white btn-outline-warning" onClick={this.toggleModal}>
-                                <i className="fa fa-sign-in fa-lg" /> Sign Up
+                                 Sign Up
                                 </Button>
                             </span>
                         </Collapse>

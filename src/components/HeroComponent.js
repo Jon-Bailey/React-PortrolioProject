@@ -19,13 +19,13 @@ class Hero extends Component {
     
     render(){
         return(
-            <Container className="main align-items-center" >
-                <Row className="align-items-center">
+            <Container className="main d-flex align-items-center" >
+                <Row className="d-flex align-items-center">
                     <Col id="heroText" md="6">
                 <h1>Easy Recipes to discover!</h1>
                 <p>Let us help you with new meal ideas.</p>
                 <Button  id="signupButton" className=" btn btn-warning px-4 mr-2">Sign Up</Button>
-                <Button outline id="recipesButton" className=" btn btn-outline-secondary px-4" onClick={this.toggleModal}>Browse Recipes</Button>
+                <Button outline id="recipesButton" className=" btn btn-outline-secondary px-4" href='/recipes'>Browse Recipes</Button>
                     </Col>
                     <Col md="6">
                     <img id="heroArt" alt="drawing of a cook" src="../images/hero_art.png"/>
