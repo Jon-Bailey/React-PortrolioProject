@@ -22,7 +22,7 @@ const Recipes = () => {
     }
 
   return (
-    <div className="container pb-5">
+    <div className="container mx-auto pb-5">
       <div className="row">
         {recipes.map(recipe => (
           <Recipe 

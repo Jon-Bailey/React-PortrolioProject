@@ -1,5 +1,5 @@
 import React, { Component }  from 'react';
-import { Nav, Navbar, NavbarBrand, Collapse, NavItem, Button, Container,Modal, ModalHeader, ModalBody,
+import { Nav, NavbarToggler, Navbar, NavbarBrand, Collapse, NavItem, Button, Container, Modal, ModalHeader, ModalBody,
     Form, FormGroup, Input, Label } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
 
@@ -30,12 +30,12 @@ class Header extends Component {
     render() {
     return (
         <Container>
-            <Navbar  sticky="top" expand="md">
+            <Navbar sticky="top" expand="md">
                     <div className="container">
                         <NavbarBrand className="mr-auto" href="/"><img src="../images/logo2.png" height="40" width="70" alt="Logo" /></NavbarBrand>
-                        <Button className="navbar-toggler" onClick={this.toggleNav} />
+                        <NavbarToggler className="navbar-toggler" onClick={this.toggleNav} />
                         <Collapse  isOpen={this.state.isNavOpen} navbar>
-                            <Nav  navbar>
+                            <Nav navbar>
                                 <NavItem>
                                     <NavLink className="nav-link" to='/home'>
                                      Home

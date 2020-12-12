@@ -1,6 +1,6 @@
 * {
-  margin:0;
-  padding:0;
+  margin: 0;
+  padding: 0;
 }
 
 body {
@@ -8,7 +8,7 @@ body {
 }
 
 h1 {
-  font-weight:700;
+  font-weight: 700;
   font-style: bold;
 }
 
@@ -20,23 +20,23 @@ h1 {
 
 .site-footer {
   padding: 20px 0;
-  background-color:#303030;
-  color:white;
+  background-color: #303030;
+  color: white;
 }
 
 #partnerImage {
-  max-width:150px;
+  max-width: 150px;
 }
 
 .main {
-  min-height:80vh;
-  background-color:white;
+  min-height: 80vh;
+  background-color: white;
 }
 
 #heroArt {
-  max-width:400px;
-  object-fit:cover;
-  object-position:center;
+  max-width: 400px;
+  object-fit: cover;
+  object-position: center;
 }
 
 #heroText h1 {
@@ -48,42 +48,38 @@ h1 {
 }
 
 .nav-link {
-  color:black;
-}
-
-.navbar-toggler-icon {
-  background-color:black;
+  color: black;
 }
 
 #navbar {
-  text-align:right;
+  text-align: right;
 }
 
 @media only screen and (min-width: 1024px) {
-  #heroText{
+  #heroText {
     transform: scale(1.3);
-    padding-left:90px;
+    padding-left: 90px;
   }
 }
 
 @media only screen and (max-width: 768px) {
-#hero {
-  height:33vh;
-}
-.heroContainer{
-  height:33vh;
-}
-#heroArt {
-  display:none;
-}
+  #hero {
+    height: 33vh;
+  }
+  .heroContainer {
+    height: 33vh;
+  }
+  #heroArt {
+    display: none;
+  }
 }
 
 @media only screen and (max-width: 375px) {
-#heroText{
-  transform:scale(.75);
-}
+  #heroText {
+    transform: scale(0.75);
+  }
 }
 
 .card {
-  max-width:300px;
+  max-width: 300px;
 }
