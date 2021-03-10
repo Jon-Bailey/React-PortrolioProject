@@ -25,7 +25,7 @@ class Hero extends Component {
                 <h1>Easy Recipes to discover!</h1>
                 <p>Let us help you with new meal ideas.</p>
                 <Button  id="signupButton" className=" btn btn-warning px-4 mr-2">Sign Up</Button>
-                <Button outline id="recipesButton" className=" btn btn-outline-secondary px-4" href='/recipes'>Browse Recipes</Button>
+                {/*<Button outline id="recipesButton" className=" btn btn-outline-secondary px-4" href='/recipes'>Browse Recipes</Button>*/}
                     </Col>
                     <Col md="6">
                     <img id="heroArt" alt="drawing of a cook" src="../images/hero_art.png"/>
