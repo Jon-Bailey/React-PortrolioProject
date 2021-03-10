@@ -16,7 +16,7 @@ class Hero extends Component {
                 isModalOpen: !this.state.isModalOpen
             });
         }
-    
+      
     render(){
         return(
             <Container className="main d-flex align-items-center" >
